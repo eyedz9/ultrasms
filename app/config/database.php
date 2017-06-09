@@ -78,7 +78,7 @@ class DATABASE_CONFIG {
 		'persistent' => false,
 		'host' => 'localhost',
 		'login' => '420messaging',
-		'password' => 'Th3B3@tl35',
+		'password' => '0ntheg0!@#',
 		'database' => '420messaging',
 		'prefix' => '',
 	);
