@@ -77,9 +77,9 @@ class DATABASE_CONFIG {
 		'driver' => 'mysql',
 		'persistent' => false,
 		'host' => 'localhost',
-		'login' => 'DB_LOGIN',
-		'password' => 'DB_PASSWORD',
-		'database' => 'DATABASE_NAME',
+		'login' => '420messaging',
+		'password' => 'Th3B3@tl35',
+		'database' => '420messaging',
 		'prefix' => '',
 	);
 
