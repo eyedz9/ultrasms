@@ -1,0 +1,64 @@
+<!--<footer>
+      <h1 class="center" style="font-size: 24px;line-height: 36px;">You can be assured your personal information and any SMS messages/voicemails are completely safe with us and will <strong>NEVER</strong> be shared with third parties.</h1><br />
+      
+      <br />
+      <hr>
+      <div class="container">
+		<div class="row-fluid">
+			<div class="span6">
+				<h3 class="text-left" style="color: #585858">Navigate</h3>
+				<div class="row-fluid">
+					<div class="span6">
+							<ul>
+								<li style="line-height: 25px;"><a style="color: #0088cc;text-decoration: none;" href="http://ultrasmsscript.com/advanceddemo">Home</a></li>
+								<li style="line-height: 25px;"><a href="http://ultrasmsscript.com/advanceddemo/users/about">About</a></li>
+								<li style="line-height: 25px;"><a href="http://ultrasmsscript.com/advanceddemo/helpdesk">Help &amp; Support</a></li>								
+		
+		
+				
+								<li style="line-height: 25px;"><a href="http://www.ultrasmsscript.com/advanceddemo/pages/pricingplans">Pricing &amp; Signup</a>
+								
+								<li style="line-height: 25px;"><a href="http://ultrasmsscript.com/advanceddemo/helpdesk">Contact Us</a></li>				
+							</ul>
+					</div>
+					<div class="span6">
+							<ul>
+
+								<li style="line-height: 25px;"><a href="http://www.ultrasmsscript.com/advanceddemo/users/terms_conditions">Terms &amp; Conditions</a></li>
+								<li style="line-height: 25px;"><a href="http://www.ultrasmsscript.com/advanceddemo/users/privacy_policy">Privacy Policy</a></li>								
+								<li style="line-height: 25px;"><a href="http://www.ultrasmsscript.com/advanceddemo/users/faq">FAQ</a></li>
+								<li style="line-height: 25px;"><a href="http://www.ultrasmsscript.com/advanceddemo/users/antispampolicy">Anti-Spam Policy</a></li>
+								
+							</ul>
+					</div>								
+				</div>
+			</div>
+
+			<div class="span6">
+				<h3 class="text-left" style="color: #585858">Subscribe to Our Email List</h3>
+				<p>For the latest tips, offers, and news. We promise not to spam!</p><br />
+				<form action="" method="post" id="subForm" style="margin: 0 0 18px;">
+					<div class="input-append">
+						<input size="16" type="text" name="cm-atjktd-atjktd" id="atjktd-atjktd" placeholder="Enter Your Email" style="width:200px;height:30px"><input class="btn" type="submit" value="Subscribe Me!" style="width:150px;height:30px">
+              		</div>
+					
+				</form>
+				<a href="http://twitter.com/home?status=Deliver+your+brand+to+the+palm+of+your+customers+hand" target="_blank"><img alt="Tell Twitter About Your Site" src="http://www.ultrasmsscript.com/screencast/app/webroot/img/twitterfooter.png" /></a>&nbsp;&nbsp;
+				<a href="http://www.facebook.com/sharer.php" target="_blank"><img alt="Tell Facebook About Your Site" src="http://www.ultrasmsscript.com/screencast/app/webroot/img/facebookfooter.png" /></a>&nbsp;&nbsp;
+				<a href="http://www.linkedin.com/shareArticle?mini=true&amp;title=Deliver%20your%20brand%20to%20the%20palm%20of%20your%20customers%20hand&amp;summary=Deliver%20your%20brand%20to%20the%20palm%20of%20your%20customers%20hand" target="_blank"><img alt="Tell Linkedin.com About Your Site" src="http://www.ultrasmsscript.com/screencast/app/webroot/img/linkedinfooter.png" /></a>		 
+			</div>
+		</div>	
+			<hr>
+				
+				<p>We are a 100% opt-in and SPAM-FREE service. Please see our Anti-Spam Policy to learn about our position on SPAM and how it's handled.</p>
+<p>Smarter SMS Marketing solutions by us allows you to create effective text message marketing campaigns easily online.</p>
+
+      <p class="pull-right"><a href="http://www.ultrasmsscript.com/screencast/#">Back to top</a></p>
+      <br />
+        <p>&copy;2014 All Rights Reserved. </p>
+          		</div>
+      </footer>
+      
+      -->
+
+

@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+		Helpdesk</title>
+
+<!--<link href="http://ultrasmsscript.com/screencast/app/webroot/favicon.ico" type="image/x-icon" rel="icon" />
+<link href="http://ultrasmsscript.com/screencast/app/webroot/css/bootstrapwp.css" type='text/css' media='all' rel='stylesheet' id='bootstrap-css'  />
+<link href="http://ultrasmsscript.com/screencast/app/webroot/css/homestyle.css" rel="stylesheet" type="text/css">
+<link href="http://ultrasmsscript.com/screencast/app/webroot/css/style.css" rel="stylesheet" type="text/css" />
+
+
+<meta property="og:title" content="Deliver your brand to the palm of your customers hand" />
+<meta property="og:description" content="Smarter SMS Marketing solutions by <?php echo SITENAME ?> allows you to create effective text message marketing campaigns easily online." /> -->
+
+
+</head>
+	<body style="background: #fff">
+	
+	</body>
+        </html>
+		

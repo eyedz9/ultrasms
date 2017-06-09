@@ -1,0 +1,73 @@
+/* 
+ * Style		: Animation Style
+ * Created by	: Divyang Prajapati
+ * Created on	: OCTOBER-20-2016
+ * @package AxilSolutions
+ * @subpackage SMS-Marketing
+ */
+.animate-ltr, .animate-rtl {
+	visibility: hidden;
+}
+.animate-slide-in-left, .animate-slide-in-right {
+	visibility: visible;
+	
+    /* -webkit-animation-timing-function: cubic-bezier(0.36,0.6,0.91,0.89);*/
+	-webkit-animation-fill-mode: forwards;
+	 -webkit-animation-duration: 1s;
+	
+    /* animation-timing-function: cubic-bezier(0.36,0.6,0.91,0.89); */
+	animation-fill-mode: forwards;
+	animation-duration: 1s;
+}
+.animate-slide-in-left {
+	-webkit-animation-name: slide-in-left;
+	animation-name: slide-in-left;
+}
+
+.animate-slide-in-right {
+	-webkit-animation-name: slide-in-right;
+	animation-name: slide-in-right;
+}
+
+@-webkit-keyframes slide-in-left {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateX(-100%);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translateX(0%);
+	}
+}
+@keyframes slide-in-left {
+	0% {
+		opacity: 0;
+		transform: translateX(-100%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0%);
+	}
+}
+
+
+@-webkit-keyframes slide-in-right {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateX(100%);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translateX(0%);
+	}
+}
+@keyframes slide-in-right {
+	0% {
+		opacity: 0;
+		transform: translateX(100%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0%);
+	}
+}

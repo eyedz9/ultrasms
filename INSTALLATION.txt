@@ -1,0 +1,555 @@
+===========================================================================================================================
+            UltraSMSScript.com - The Ultimate SMS Marketing Platform
+                        
+
+                    Quick Installation Guide
+---------------------------------------------------------------------------------------------------------------------------
+
+
+Thank you for purchasing the UltraSMSScript!
+
+
+
+Overview
+===========================================================================================================================
+This installation guide describes how to install and setup the UltraSMSScript. 
+
+Should you require further post-sale support, please use our helpdesk at http://ultrasmsscript.com/helpdesk/
+
+
+
+
+Administration Panel
+===========================================================================================================================
+
+UltraSMSScript comes with an admin panel in order to administrate the script, simply visit http://www.yoursiteurl.com/admin 
+and use the following default log-in details.
+
+Username: admin
+Password: test1234
+
+
+
+
+
+Before You Install - Create your Twilio, Nexmo, Plivo, or Slooce account depending on what SMS API you want to use
+===========================================================================================================================
+
+TWILIO
+------
+
+In order for the UltraSMSScript to work without restrictions, you MUST possess an upgraded Twilio account.
+
+Create your Twilio account for free by navigating to the following link:
+
+https://www.twilio.com/try-twilio
+
+When upgrading your account, you are required to deposit into your Twilio account a minimum of $20 to get started. 
+Any SMS and voice costs are simply taken from the balance of your Twilio account.
+
+
+
+If you wish for your users to send global SMS, make sure you have all global permissions enabled for your 
+Twilio account
+
+You can check here: 
+https://www.twilio.com/user/account/settings/international/sms 
+
+If you want to lock it down to a specific country or countries, then make sure only those countries are checked.
+
+
+
+NEXMO
+-----
+
+Create your Nexmo account by navigating to the following link:
+
+https://dashboard.nexmo.com/register
+
+Like Twilio, any SMS and voice costs are simply taken from the balance of your Nexmo account.
+
+** You will have to deposit some money to buy and assign your own number through the platform.
+
+
+
+PLIVO
+-----
+
+Create your Plivo account by navigating to the following link:
+
+https://manage.plivo.com/accounts/register/
+
+Like Twilio, any SMS and voice costs are simply taken from the balance of your Plivo account.
+
+** You will have to deposit some money to buy and assign your own number through the platform.
+
+
+
+Slooce
+------
+
+Create your Slooce account by navigating to the following link:
+
+http://www.sloocetech.com
+
+** Slooce is used only in the US and for those wanting to use their shared short code 47711
+
+
+>>> IMPORTANT <<< Mention to Behfar Razavi(CEO of SlooceTech) that this is for use in UltraSMSScript.
+
+
+Behfar will create your Slooce account and provide you with 5 things that will need to be added 
+when creating a user account in the platform through the admin panel.
+
+1. Slooce API URL
+2. Slooce Keyword(this is actually the keyword you will register with them)
+3. Slooce partner ID
+4. Slooce partner password
+5. Short code(47711)
+
+
+>>> IMPORTANT - SLOOCE ONLY <<< Your host needs to allow outbound connections on port 8084. Contact your host and have them open port 8084
+for outbound connections.
+
+
+
+
+
+Script Installation Instructions
+==============================================================================================================================
+
+** This product will run on almost all hosting platforms **
+
+NOTE: Please ensure you have FULL FTP and phpMyAdmin access, we also recommend using FileZilla in order to upload the script files.
+
+
+
+BEFORE YOU BEGIN
+
+UltraSMSScript requires a MySQL database in order to function correctly. We have provided you with the .sql script 
+that you will need to execute after creating the DB that will create the DB tables. (located in the "Database Backup" folder). 
+
+We recommend creating a database before you upload any files. Keep the following information safe.
+
+Database Name
+Database Hostname
+Database Login ID
+Database Password
+
+
+
+
+Let's begin..
+===============================================================================================================================
+
+1. Using FileZilla or an FTP client of your choice, upload the scripts file (UltraSMSScript-Advanced.zip) out to the location you want 
+   to install the software, either your main hosting directory (eg. public_html), subdomain folder, add-on domain folder, or sub-folder.
+
+2. Unzip "UltraSMSScript-Advanced.zip" from that location.
+
+3. Open up the "Database Backup" folder. In there you will find the ultrasms.sql file.
+
+4. Using phpMyAdmin, select or click on the database you just created above. Import the file ultrasms.sql into your newly created database.
+
+5. Navigate to and open app/config/database.php. Enter your database details under DATABASE_CONFIG.
+
+6. Navigate to and open file app/webroot/database.php
+
+   - At the top in the "mysql_connect" statement, enter your database details there ("localhost","login","password")
+   - A few lines down, add the database name to the "mysql_select_db" statement inside the ()
+
+7. Click 'Save'
+
+
+
+
+Cron Jobs Setup
+================================================================================================================================
+
+You will need to create 5 cron jobs in your CPanel which is needed for the bulk SMS Scheduling functionality, daily summary email
+alerts(should the user turn these on), daily autoresponders if the user creates any, any birthday SMS wishes, and loyalty program.
+
+1. In your CPanel, scroll at the bottom under the "Advanced" section and click the "Cron jobs" icon.
+
+2. Under the "Add New Cron Job" section, next to the "Minute" label in the textbox, enter in "*/15" without the quotes. 
+   This will cause the cron job to run every 15 minutes.
+
+   ** Hostgator puts a limit on how often you can run a cron job on a shared hosting plan. Depending on your hosting, you may be able to run it 
+      more often. Running it more often will make the scheduled delivery times of the bulk SMS more accurate. **
+
+3. In the hour, day, month, weekday fields, enter "*"
+
+4. In the "Command" box, enter the below command:
+
+   php -q /home/user_name/public_html/app/webroot/cronjob.php
+
+   NOTE: - make sure you change the "user_name" in the command URL above to reflect your cpanel account's username.
+         - make sure if you installed the script in an add-on domain and/or sub-folder, that the command URL above reflects that.
+
+         Example if installed in root public_html:      php -q /home/user_name/public_html/app/webroot/cronjob.php
+         Example if installed in add-on domain folder:  php -q /home/user_name/public_html/add-on domain folder name/app/webroot/cronjob.php
+
+5. Click "Add New Cron Job" - This one is for the bulk SMS scheduling
+
+
+********* 2nd CRON JOB SETUP ********
+
+
+1. Under the "Add New Cron Job" section, next to the "Common Settings" label select in the drop down "Once a day(0 0 * * *)" 
+   This will cause the cron job to run once a day to send out the daily summary emails.
+
+2. In the "Command" box, enter the below command:
+
+   php -q /home/user_name/public_html/app/webroot/daily_summary_cronjob.php
+
+   NOTE: - make sure you change the "user_name" in the command URL above to reflect your cpanel account's username.
+         - make sure if you installed the script in an add-on domain and/or sub-folder, that the command URL above reflects that.
+
+      Example if installed in root public_html:      php -q /home/user_name/public_html/app/webroot/daily_summary_cronjob.php
+      Example if installed in add-on domain folder:  php -q /home/user_name/public_html/add-on domain folder name/app/webroot/daily_summary_cronjob.php
+
+3. Click "Add New Cron Job" - This one is for the daily summary emails
+
+
+******** 3rd CRON JOB SETUP ********
+
+
+1. Under the "Add New Cron Job" section, next to the "Common Settings" label select in the drop down "Once a day(0 0 * * *)" 
+   
+   - Then for the hour drop down, select 12:00 p.m. noon (12). 12 should now appear in the Hour box.
+   - Minute = 0, Hour = 12, Day = *, Month = *, Weekday = *
+   
+   * This will cause the cron job to run once a day at 12:00PM noon to send out the autoresponders.
+
+2. In the "Command" box, enter the below command:
+
+   php -q /home/user_name/public_html/app/webroot/respondercronjob.php
+
+   NOTE: - make sure you change the "user_name" in the command URL above to reflect your cpanel account's username.
+         - make sure if you installed the script in an add-on domain and/or sub-folder, that the command URL above reflects that.
+
+         Example if installed in root public_html:      php -q /home/user_name/public_html/app/webroot/respondercronjob.php
+         Example if installed in add-on domain folder:  php -q /home/user_name/public_html/add-on domain folder name/app/webroot/respondercronjob.php
+
+3. Click "Add New Cron Job" - This one is for the daily autoresponders
+
+
+
+******** 4th CRON JOB SETUP ********
+
+
+1. Under the "Add New Cron Job" section, next to the "Common Settings" label select in the drop down "Once a day(0 0 * * *)" 
+   
+   - Then for the hour drop down, select 12:00 p.m. noon (12). 12 should now appear in the Hour box.
+   - Minute = 0, Hour = 12, Day = *, Month = *, Weekday = *
+   
+   * This will cause the cron job to run once a day at 12:00PM noon to send out the birthday SMS wishes.
+
+2. In the "Command" box, enter the below command:
+
+   php -q /home/user_name/public_html/app/webroot/birthdaycronjob.php
+
+   NOTE: - make sure you change the "user_name" in the command URL above to reflect your cpanel account's username.
+         - make sure if you installed the script in an add-on domain and/or sub-folder, that the command URL above reflects that.
+
+         Example if installed in root public_html:      php -q /home/user_name/public_html/app/webroot/birthdaycronjob.php
+         Example if installed in add-on domain folder:  php -q /home/user_name/public_html/add-on domain folder name/app/webroot/respondercronjob.php
+
+3. Click "Add New Cron Job" - This one is for the birthday SMS wishes
+
+
+
+******** 5th CRON JOB SETUP ********
+
+
+1. Under the "Add New Cron Job" section, next to the "Common Settings" label select in the drop down "Once a day(0 0 * * *)" 
+   
+   - Then for the hour drop down, select 2:00 a.m. (2). 2 should now appear in the Hour box.
+   - Minute = 0, Hour = 2, Day = *, Month = *, Weekday = *
+   
+   * This will cause the cron job to run once a day at 2:00am to generate a new daily punch code for the loyalty program.
+
+2. In the "Command" box, enter the below command:
+
+   php -q /home/user_name/public_html/app/webroot/smsloyaltycronjob.php
+
+   NOTE: - make sure you change the "user_name" in the command URL above to reflect your cpanel account's username.
+         - make sure if you installed the script in an add-on domain and/or sub-folder, that the command URL above reflects that.
+
+         Example if installed in root public_html:      php -q /home/user_name/public_html/app/webroot/smsloyaltycronjob.php
+         Example if installed in add-on domain folder:  php -q /home/user_name/public_html/add-on domain folder name/app/webroot/smsloyaltycronjob.php
+
+3. Click "Add New Cron Job" - This one is for the generating a new punch code for the loyalty program
+
+
+
+
+
+Email to SMS configuration
+=============================================================================================================================
+
+In order to use the SMS to Email/Email to SMS feature in the script, you must create an email address associated with your domain
+(this should be the support email address you will use in the admin config), then forward or pipe that email to a program. This takes the 
+the incoming email when someone replies to it and sends it as a SMS to the user who texted your number.
+
+** Most web hosts allow email piping to program since it is a very basic and important feature, however there are some that don't.
+   Most controls panels offer a very easy way of doing it, like the steps outlined below. If not, contact your host to help you setup email piping.
+
+1. After creating your domain related email address, go to "forwarders" in your cpanel under the Mail section.
+2. Click "Add Forwarder" and put in your domain related email you created above as the "Address to Forward" field.
+3. Under "Destination", click on the "Advanced Options" link.
+4. Click the "Pipe to a program" radio button.
+5. In the field next to it, enter this command:
+
+   "/home/user_name/public_html/app/webroot/sendsms.php"
+
+   NOTE: - make sure you change the "user_name" in the command URL above to reflect your cpanel account's username.
+
+    
+6. Click "Add Forwarder".
+7  Go to your app/webroot folder where you installed the script and change the file permissions of the sendsms.php file to 
+   755 (readable by User, Group, and World, writable by User, executable by User, Group, and World).
+
+    Step 1: Open your File Manager and navigate to the file(sendsms.php) that you need to change.
+
+    Step 2: Click on the name of the file.
+
+    Step 3: Click on the Change Permissions link in the top menu of the File Manager page.
+
+    Step 4: Click on as many check boxes as you require to create the right permission. The permission numbers underneath the check boxes 
+            will update automatically.
+
+    Step 5: Click on the Change Permissions button when you are ready. The new permission level is saved and the display updated to show 
+            the modified file.
+
+   
+
+
+
+Script Activation
+============================================================================================================================
+
+In order to use the UltraSMSScript without restrictions, you MUST have an upgraded Twilio, Nexmo, Plivo, or Slooce Account.
+
+
+If using TWILIO
+---------------
+
+1. Whilst logged into your Twilio account, you should notice an AccountSID and Auth Token, note these down.
+
+2. Whilst logged into your scripts administrative panel, click on 'Config' and 'Edit'. 
+   
+3. Select Twilio API type, then
+
+   Enter your unique 
+   * AccountSID
+   * Auth number
+   * site URL (example http://yoursiteurl.com) ** Exact URL where script is installed. MUST include "http://" or "https://" in URL.
+   * site name
+   * Paypal email address (If you plan on accepting PayPal payments for your credit packages, this must be entered)
+   * Support email address (Email address created above in the "Email to SMS Configuration" section)
+   * click save.
+
+
+
+If using NEXMO
+--------------
+
+1. Whilst logged into your Nexmo account, you should notice an Nexmo Key and Nexmo Secret, note these down.
+
+2. Whilst logged into your scripts administrative panel, click on 'Config' and 'Edit'. 
+
+3. Select Nexmo API type, then
+
+   Enter your unique 
+   * Nexmo Key
+   * Nexmo Secret
+   * site URL (example http://yoursiteurl.com) ** Exact URL where script is installed. MUST include "http://" or "https://" in URL.
+   * site name
+   * Paypal email address (If you plan on accepting PayPal payments for your credit packages, this must be entered)
+   * Support email address (Email address created above in the "Email to SMS Configuration" section)
+   * click save.
+
+
+
+If using PLIVO
+--------------
+
+1. Whilst logged into your Plivo account, you should notice an Auth ID and Auth Token, note these down.
+
+2. Whilst logged into your scripts administrative panel, click on 'Config' and 'Edit'. 
+
+3. Select Plivo API type, then
+
+   Enter your unique 
+   * Plivo ID
+   * Plivo Token
+   * site URL (example http://yoursiteurl.com) ** Exact URL where script is installed. MUST include "http://" or "https://" in URL.
+   * site name
+   * Paypal email address (If you plan on accepting PayPal payments for your credit packages, this must be entered)
+   * Support email address (Email address created above in the "Email to SMS Configuration" section)
+   * click save.
+
+
+
+If using SLOOCE
+--------------
+
+1. Whilst logged into your scripts administrative panel, click on 'Config' and 'Edit'. 
+
+2. Select Slooce API type, then
+
+   Enter your unique 
+   * site URL (example http://yoursiteurl.com) ** Exact URL where script is installed. MUST include "http://" or "https://" in URL.
+   * site name
+   * Paypal email address (If you plan on accepting PayPal payments for your credit packages, this must be entered)
+   * Support email address (Email address created above in the "Email to SMS Configuration" section. Should be a domain related email address)
+   * click save.
+
+3. Create a user account in the platform through the admin panel, click on 'User' and 'Add User'. Enter all info including the 5 Slooce fields
+   obtained above when creating your Slooce account.
+
+
+4. If you purchased the encoded version(levels 1-3), within 24 hours of purchase, you will receive by email a license file in order for the 
+   script to run properly. Once you receive this file, simply copy it to the root folder of your installation(or in public_html 
+   if script was installed here) that was unzipped off your main hosting directory (eg. public_html). 
+ 
+
+5. Your script is installed!
+
+
+NOTE: Some of the script's files are encoded using ioncube. Most hosting companies already have the ioncube loader installed and 
+enabled since ioncube is the industry standard for protecting sensitive files. However if the script doesn't run because of this, 
+contact your hosting company asking them to enable the ioncube loader for your hosting account.
+
+
+
+
+It is highly recommended that you create your own FilePicker Account
+==============================================================================================================================
+
+FilePicker is the blue "Pick File" button you see on the Bulk SMS page. This service allows you and your users
+to select files from 17 cloud sources. Filepicker.io connects to all the places where your users have files, from 
+Facebook and Instagram to Dropbox and Google Drive to Github and Gmail attachments. The free plan allows you to 
+pick 500 files per month. You can always upgrade to a bigger plan if you need it at a future date.
+
+1. Sign up for the free plan at https://dev.filestack.com/register/free
+2. Copy the API key from your development portal inside your filepicker account.
+3. Go to the cake/bootstrap.php file of your script installation.
+4. Find the line "define('FILEPICKERAPIKEY', 'XXXXXXXXXXXXXXXX');" and replace 'XXXXXXXXXXXXXXXX' with
+   your API key you copied in step #2.
+
+
+** If you don't want to use the File Picker, then you can hide that button. Directly under the line in #4 above, 
+   you will see "define('FILEPICKERON', 'Yes');" Just replace 'Yes' with 'No'.
+
+
+
+
+Bitly.com account creation for using the link shortener
+==============================================================================================================================
+
+In order to use bitly.com to shorten and track link clicks in the platform, you will need to create an account with them to 
+obtain an API key and access token.
+
+1. Go to https://bitly.com/a/sign_up to create an account.
+2. Verify your email address from the email that they send you.
+3. Log in to your account and go to settings/advanced tab at https://bitly.com/a/settings/advanced.
+4. Scroll down and note down your username and API key.
+5. Next go to https://bitly.com/a/oauth_apps and click the "Generate Token" button.
+6. Note down your Generic Access Token.
+7. Whilst logged into your scripts administrative panel, click on 'Config' and 'Edit'. 
+8. Scroll to the bottom and enter in your bitly username, bitly API key and bitly access token from the steps above.
+9. Click Submit.
+
+
+
+
+Helpdesk Installation Instructions
+==============================================================================================================================
+
+The helpdesk on the site also needs a separate database to be created. 
+
+1. Create a database for the helpdesk.
+
+   Please note:
+
+   Database name
+   Database username
+   Database password
+
+2. Under the "Helpdesk" folder, you will see an "install" folder. 
+   
+   Open install in your browser, for example (modify to your URL):
+   http://www.site.com/helpdesk/install
+
+3. The setup script will run. Click "New install" and follow instructions through 4 steps:
+
+   STEP 1: License agreement - read the HESK License agreement and confirm that you agree with the terms.
+
+   STEP 2: Check setup - the script will test your server to see if all required settings are correct and advise solutions to any problems.
+
+   STEP 3: Database settings - enter your MySQL database settings that were created with #1 above and the setup script will test them.
+
+   STEP 4: Setup database tables - everything OK, the script will install MySQL tables.
+
+4. DELETE the "install" directory above from your server for security purposes!
+
+
+***The Helpdesk has been installed! If we are doing the installation for you, we stop here. You must complete the below steps to configure
+your helpdesk***
+
+
+To setup your helpdesk and configure your site URL, support email address, name, signature, and change your password, please go to the 
+admin here (modify to your URL):
+
+http://www.site.com/helpdesk/admin/
+
+If asked for a password login using default information:
+-> Default username: Administrator
+-> Default password: admin
+
+TIP: Passwords are CaSe SeNSiTiVe ("ADMIN" is not the same as "admin") while usernames are not.
+
+1. Click the "Settings" link in the top menu to get to the settings page (if not there already)
+
+   Take some time and get familiar with all the available settings. Most should be self-explanatory, for additional information about each setting          click the [?] link for help about the current setting.
+
+   NOTE: Don't forget to click the "Save changes" button at the bottom of the settings page to save your settings!
+
+2. Click the "Profile" link to set your name, e-mail, signature and *** CHANGE YOUR PASSWORD ***.
+
+
+Customers can submit tickets and browse knowledgebase by visiting the main folder, for example:
+
+http://www.site.com/helpdesk
+
+
+
+
+Administration Panel Log In 
+===========================================================================================================================
+
+In order to administrate the script, simply visit http://www.yoursiteurl.com/admin and use the following default 
+log in details.
+
+Username: admin
+Password: test1234
+
+
+
+Support
+===========================================================================================================================
+
+The UltraSMSScript is designed to be very simple and easy to use. However should you require support, please
+don't hesitate to get in-touch.
+
+http://ultrasmsscript.com/helpdesk/
+
+
+============================================================================================================================
+
+>>> PLEASE refer to README_AFTER_INSTALLATION.txt, STRIPE_SETUP.txt, Application User Guide.pdf <<<
+
+============================================================================================================================
+

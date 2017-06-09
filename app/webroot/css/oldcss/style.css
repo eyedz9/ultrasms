@@ -1,0 +1,171 @@
+
+@font-face {font-family:Century Gothic;src: url(../fonts/GOTHIC.TTF);}
+@font-face {font-family:Century Gothic Bold;src: url(../fonts/GOTHICB.TTF);}
+/*Reset default browser CSS.-------------------------------------------------------------- */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, thead {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+}
+table{ margin:0px; padding:0px; border-collapse:collapse;}
+tr, th, td{margin:0px; padding:0px; }
+/* Headings
+-------------------------------------------------------------- */
+h1,h2,h3,h4,h5,h6 { line-height:normal; color:#000;}
+h1{ font-size:40px; padding-bottom:15px; font-weight:bold; text-transform: uppercase; color: #e67754;}
+h2{ font-size:24px;}
+h3{ font-size:22px; color: #e67754;}
+h4{ font-size:20px;}
+h5{ font-size:18px;}
+h6{ font-size:16px;}
+/* Lists
+-------------------------------------------------------------- */
+ul, ol, ul li{ padding:0px; margin:0px;}
+li ul,
+li ol       { padding:0px; margin:0px;}
+ul          { list-style-type:none; }
+ol          { list-style-type: decimal; }
+dl          { padding:0px; margin:0px; }
+dl dt       { font-weight: bold; }
+dd          { padding:0px; margin:0px;}
+/* Remove annoying border on linked images. */
+a img { border: none; outline:none; }
+a {outline:none; text-decoration:none; color:#5a5a5a;}
+a:hover{ text-decoration:underline;}
+input[type=submit]{ cursor:pointer;}
+.error input,.form-error{ border: 1px dashed #ff0000 !important; font-size:11px !important;}
+/*common class*/
+.clear{ clear:both;}
+.alignleft{ float:left;}
+.alignright{ float:right;}
+.alignmiddle{ text-align:center;}
+.spacer10 { height:10px; clear:both;}
+.pnone{ padding:0px !important;}
+p{ font-size:13px; line-height: 18px;}
+/* Body  ==============================================*/
+body {font-size: 13px;padding:0; margin:0;color:#525252; font-family:Century Gothic, Arial; background:#fff url(../img/body_bg.jpg) repeat-x 0px 0px;}
+body#inner{ background:url(../img/body_bg_inner.jpg) repeat-x 0px 0px;}
+/* This fixed width Wrapper surrounds all other blocks ============================================== */
+.wrapper{ width:980px; margin:0px auto; padding:0px;}
+.banner-outter{background: url(../img/banner-img.jpg) no-repeat center 0px;}
+/*header css ==============================================*/
+#header{overflow:hidden; height: 74px; padding-top: 32px;}
+#header .logo{margin:18px 0px 0px 0px; float:left;}
+#header .nav{ float: right; margin: 22px 0px 0px 0px;}
+.nav li{ float:left; text-transform: uppercase; font-size: 14px;}
+.nav li a{ color:#fff; background: #c95d38; -moz-border-radius: 5px; border-radius: 5px; margin-right: 5px; display:block; height:37px; line-height:37px; padding:0px 15px;}
+.nav li a:hover , .nav li.active a{ background: #a74828;}
+/*header css ==============================================*/
+/*layout css*/
+.leftcolumn{ float:left; width:650px; padding-top:30px;}
+.rightcolumn{ float:right; width:280px;padding-top:42px;}
+/*layout css*/
+/*banner css ==============================================*/
+#bannerarea{height: 379px; overflow: hidden;}
+#bannerarea .bannertext{ font-size: 12px; color:#000000; line-height: 20px; width:400px;  font-size:14px; float: right; margin: 195px 0px 0px 0px; text-align: center;}
+#bannerarea .bannertext img{ margin:20px 0px 0px 0px;}
+/*banner css ==============================================*/
+/*content css ==============================================*/
+#content{ margin: 15px 0px 0px 0px;}
+.features-bg{ background: #fff; border-top: 1px solid #e1e0e0;  border-bottom: 1px solid #e1e0e0; padding: 0px 10px 5px 10px; margin-top: 40px; }
+.features{ background: url(../img/featues.png) no-repeat 0px 150px; margin-top: 49px; overflow: hidden; padding-bottom: 25px;}
+.features ul{ margin: 0px 0px 0px 0px;  padding: 0px; width:690px; float: right;}
+.features ul li{ overflow: hidden; width:240px; float: left; margin-right: 30px; margin-bottom: 30px; padding-left:90px; height:130px;}
+.features ul li h6{ font-size:20px; font-weight:bold; padding-bottom:10px; padding-top: 5px; color: #fff; }
+.features ul li p{ font-size:13px; color:#fff; padding-right: 5px;}
+.features ul li.icon-1{ background:url(../img/icon-1.png) #e67754 no-repeat 10px 30px; -moz-border-radius: 4px; border-radius: 4px;}
+.features ul li.icon-2{ background:url(../img/icon-2.png) #e67754 no-repeat 10px 30px; -moz-border-radius: 4px; border-radius: 4px;}
+.features ul li.icon-3{ background:url(../img/icon-3.png) #e67754 no-repeat 10px 30px; -moz-border-radius: 4px; border-radius: 4px;}
+.features ul li.icon-4{ background:url(../img/icon-4.png) #69b85f no-repeat 10px 30px; margin:0px; -moz-border-radius: 4px; border-radius: 4px;}
+.features ul li.icon-5{ background:url(../img/icon-5.png) #69b85f no-repeat 10px 30px;margin:0px; -moz-border-radius: 4px; border-radius: 4px;}
+.features ul li.icon-6{ background:url(../img/icon-6.png) #69b85f no-repeat 10px 30px;margin:0px; -moz-border-radius: 4px; border-radius: 4px;}
+.testimonials{ margin: 30px 0px 50px 0px;}
+.testimonials h5{ font-family:Century Gothic; font-size: 25px; text-transform: uppercase; color:#f28563; padding-bottom: 20px;}
+.testimonials .inner-message{background: url(../img/qt-bg.png) no-repeat 15px 20px; font-size: 14px; margin: 0px 0px 1px 0px; min-height: 120px; padding: 32px 10px 0px 188px; overflow:hidden; border-top: 5px dotted #d3d1d1; border-bottom: 5px dotted #d3d1d1; }
+.testimonials .user-img{ float:left; width:90px;}
+.testimonials .user-img img{ border:1px solid #fff;}
+.testimonials .message{ float:right; width:650px; padding:0px 0px 10px 20px;}
+.testimonials .message p{ color:#8f8d8d; padding-bottom: 10px;}
+.testimonials .message span{ display: block; color: #c95d38; font-weight:bold;}
+.pro-txt{ font-size:45px; text-align:center; border-bottom:1px solid #f7d4c9; padding:20px 0px;}
+.smalltxt{ font-size:14px; display:block; padding:10px 0px;}
+.pro-txt a{ color:#e67754;}
+.secondary_nav{ overflow:hidden; margin:10px 0px 10px 0px}
+.secondary_nav li{ float:left; margin:0px 10px 0px 0px;}
+.secondary_nav li a{color:#fff; background:#e67754; padding:1px 10px;-moz-border-radius: 10px;border-radius: 10px;-webkit-border-radius: 10px; float:left;}
+.secondary_nav li a:hover , .secondary_nav li a.current{ background:#DB7801;}
+.actions a.nyroModal{ background:#17a883;padding:2px 10px;-moz-border-radius: 10px;border-radius: 10px;-webkit-border-radius: 10px; float:left; color:#fff; margin:0px 10px 0px 0px; font-size:11px;}
+.actions a.buttonstyle{ background:#17a883;padding:2px 10px;-moz-border-radius: 10px;border-radius: 10px;-webkit-border-radius: 10px; float:left; color:#fff; margin:0px 10px 0px 0px; font-size:11px;}
+.submit{ margin:10px 0px 0px 0px;}
+.submit input{ background:#e67754; color:#fff; font-size:12px; padding:5px 15px; text-transform: uppercase; font-weight: bold; border:none; float:left; -moz-border-radius: 4px; border-radius: 4px;}
+.loginbox a.forgetpass{ font-size:10px; color:#0a7da3; float:left; margin:8px 0px 0px 10px;}
+/*content css ==============================================*/
+/*Main Content */
+.loginbox{  border-top: 5px dotted #ec9579; border-bottom: 5px dotted #ec9579; padding:10px; margin-bottom:20px; }
+.loginner{  background: #fef0ec;  padding:15px; overflow:hidden; -moz-border-radius: 4px; border-radius: 4px;}
+.loginbox .inputtext{ background:#fff; padding:5px; border: 1px solid #fad9cf; height: 30px; width: 250px; width:250px; color: #e67754; font-family:Century Gothic; }
+.loginbox label{ display:block; font-size:16px; padding-bottom:8px; color: #a1a1a0; }
+.loginbox .inputbutton{ background:#e67754; color:#fff; font-size:12px; padding:5px 15px; text-transform: uppercase; font-weight: bold; border:none; float:left; -moz-border-radius: 4px; border-radius: 4px;}
+.loginbox a.forgetpass{ font-size:10px; color:#0a7da3; float:left; margin:8px 0px 0px 10px;}
+.loginbox .feildbox{ margin:0px 0px 10px 0px; overflow:hidden;}
+.loginbox .login-left{ float:left;width:270px;}
+.loginbox .login-right{ float:right;width:290px; padding-right:20px; text-align:center; }
+.loginbox .login-right p{font-size:11px; padding:15px 0px; border-bottom:1px solid #ccc; margin-bottom:10px;}
+.feildbox img{width:150px;border:1px solid #C6C6C6}
+.loginner th{ text-align:left; padding:5px;}
+.loginner td{ text-align:left; padding:5px;}
+.loginner .paging{ margin-top:10px;font-size:11px;}
+.loginner .paging a{ color:#DB7801; }
+.required_star{
+  color:#d7000e;
+  font-size:18px;
+  font-weight:normal;
+}
+.error-message{color:#FF0000;padding: 5px 0 0 0}
+
+.rightcolumn h4{ background:url(../img/sidebar-heading-bg.png) no-repeat 0px 8px; color:#DB7801; margin-bottom:10px;}
+.rightcolumn h4 span{ background:#fff; padding:2px 5px;}
+.rightcolumn .sidebarbox{ border-bottom:3px solid #d5d5d5; background:#f8f8f8; padding:10px; margin-bottom:20px;}
+.rightcolumn .sidebarbox ul{ margin:0px; padding:0px; list-style:none;}
+.rightcolumn .sidebarbox li{ padding:8px 0px 8px 20px; border-bottom:1px dashed #ccc; background:url(../img/arrow-blue.png) no-repeat 0px 8px; }
+.rightcolumn .sidebarbox p{ padding-bottom:10px;}
+
+
+#validationMessages {
+    background-color: #fff;
+    padding: 10px;
+}
+#validationMessages p {
+    background-color: #FBDBDE;
+    border: 1px dashed #FE8890;
+    color: #D7000E;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    margin: 5px 0;
+    padding: 0 5px;
+}
+
+/*Footer css ==============================================*/
+#footer{ background:#2d2b2a; min-height: 200px; clear: both; margin-top: 10px; padding-top: 40px;color: #fff;font-size: 12px;}
+#footer a{color:#fff; font-weight: bold;}
+#footer p{ font-size:11px;}
+#footer h6{text-transform: uppercase; padding-bottom: 20px;font-family:Century Gothic Bold; color: #fff; font-size:25px; text-transform: uppercasel}
+#footer .areaone{ float: left;width:230px; border-right: 2px dotted #fff; min-height: 110px; padding-right:40px; }
+#footer .areatwo{ float: left;width:370px; border-right: 2px dotted #fff; no-repeat right 15px; min-height: 110px; padding: 0px 40px; }
+#footer .areathree{ float: left;width:220px; margin-left:30px; }
+.social{ overflow: hidden; padding:5px 0px 20px 0px;}
+.social a{ background: url(../img/background.png) no-repeat 0px -71px; width:50px ; height:60px; float:left; text-indent: -9999em; margin-right: 12px;}
+.social a.twitter{ background-position: -55px -71px;}
+.social a.linkedin{ background-position: -109px -71px;}
+.bottomarea{ background: #1b1818; font-size: 11px; padding: 12px 15px 12px 7px; clear: both; overflow: hidden; margin-top: 20px;}
+.bottomarea a{ margin: 0px 5px;}
+/*Footer css ==============================================*/
+
+/*Support Navigation ==============================================*/
+
+#support {background: #3a3837; width: 100%; border-bottom: 1px solid #913c1f; color: #fff; text-align: center; padding-top: 8px; padding-bottom: 8px; font-size: 15px; margin: 0 auto; position: absolute; }
+#support a {font-weight: bold; color: #fff;}

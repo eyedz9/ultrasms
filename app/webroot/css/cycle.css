@@ -1,0 +1,7 @@
+#slideshow{ height:100px;}
+#main { margin: 20px }
+#nav { margin: 10px auto; position: relative; width:80px; }
+#nav a {background:url(../img/nav-circule.jpg) no-repeat 0 -11px;width:11px;height:11px; float:left; text-indent:-9999em; margin:0px 4px 0px 0px;}
+#nav a:hover, #nav .activeSlide{ background-position:0 0px;}
+
+

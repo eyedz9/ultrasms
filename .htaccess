@@ -1,0 +1,20 @@
+<IfModule mod_rewrite.c>	
+   RewriteEngine on 
+    
+   #****** FORCE SSL REDIRECTION CODE GOES HERE *******
+
+   # RewriteCond %{ENV:HTTPS} !on [NC]
+
+   #****** If script is installed in a sub-folder(example: http://yourdomain.com/script), uncomment(remove the # sign) below ******
+
+   # RewriteRule ^(.*)$ https://%{SERVER_NAME}/$1 [R,L]
+
+   #****** If script is installed in the main domain or a sub-domain, uncomment(remove the # sign) below line ******
+
+   # RewriteRule ^(.*)$ https://%{SERVER_NAME} [R,L]
+
+   RewriteRule    ^$ app/webroot/    [L]   
+   RewriteRule    (.*) app/webroot/$1 [L]
+   
+  
+</IfModule>
