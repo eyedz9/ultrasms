@@ -5,7 +5,7 @@
 	   die('Could not connect: ' . mysql_error());
 	}
         
-        mysql_select_db("DATABASE_NAME", $con); 
+        mysql_select_db("420messaging", $con); 
 
 
 	//fetch data from configs	   
