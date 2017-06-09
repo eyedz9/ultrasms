@@ -70,6 +70,7 @@ width:290px;
 				</div>
 			<div class="">
 				<div class="row">
+					<a  class="btn btn-warning center-block" href="<?php echo SITE_URL;?>/contacts/add" title="Add Contact"><i class="fa fa-plus-square-o"></i> Add Contact </a>
 					<!--<div class="dashboard-stat blue">
 						<div class="visual">
 							<i class="fa fa-user"></i>
